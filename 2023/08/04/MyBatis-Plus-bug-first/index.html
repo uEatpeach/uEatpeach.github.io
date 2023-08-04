@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://ueatpeach.github.io">
   <title>在使用 MyBatis Plus 进行开发时，由于自动生成的 ID 过长，重新设置数据库自增长ID的起始值 | 星星之火</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="问题描述在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。 在某种情况下，当使用 MyBatis Plus 自动生成的 ID 过长时，可能导致其他接口无法按照 int 类型查询数据，因为数据库中设计为 bigint 类型，纯了 19 位数字。为解决这个问题，一种简单的方法是使用数据库的自增长主键来替代 MyB">
+  <meta name="description" content="解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值问题描述在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。 在某种情况下，当使用 MyBatis Plus 自动生成的 ID 过长时，可能导致其他接口无法按照 int 类型查询数据，因为数据库中设计为 bigint 类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在使用 MyBatis Plus 进行开发时，由于自动生成的 ID 过长，重新设置数据库自增长ID的起始值">
 <meta property="og:url" content="https://ueatpeach.github.io/2023/08/04/MyBatis-Plus-bug-first/index.html">
 <meta property="og:site_name" content="星星之火">
-<meta property="og:description" content="问题描述在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。 在某种情况下，当使用 MyBatis Plus 自动生成的 ID 过长时，可能导致其他接口无法按照 int 类型查询数据，因为数据库中设计为 bigint 类型，纯了 19 位数字。为解决这个问题，一种简单的方法是使用数据库的自增长主键来替代 MyB">
+<meta property="og:description" content="解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值问题描述在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。 在某种情况下，当使用 MyBatis Plus 自动生成的 ID 过长时，可能导致其他接口无法按照 int 类型查询数据，因为数据库中设计为 bigint 类型">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-04T07:57:39.000Z">
-<meta property="article:modified_time" content="2023-08-04T08:09:35.508Z">
+<meta property="article:modified_time" content="2023-08-04T09:40:46.777Z">
 <meta property="article:author" content="Wen Kang Jian">
 <meta property="article:tag" content="随笔">
 <meta name="twitter:card" content="summary">
@@ -84,7 +84,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/uEatpeach" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="qq" target="_blank" href="/2216109163" title="qq"><i class="icon-qq"></i></a>
+					<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2216109163&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 		        
 					<a class="bilibili" target="_blank" href="https://space.bilibili.com/331970302" title="bilibili"><i class="icon-bilibili"></i></a>
 		        
@@ -129,7 +129,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/uEatpeach" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="qq" target="_blank" href="/2216109163" title="qq"><i class="icon-qq"></i></a>
+						<a class="qq" target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=2216109163&site=qq&menu=yes" title="qq"><i class="icon-qq"></i></a>
 			        
 						<a class="bilibili" target="_blank" href="https://space.bilibili.com/331970302" title="bilibili"><i class="icon-bilibili"></i></a>
 			        
@@ -186,59 +186,25 @@
         <!-- # description: '在使用 MyBatis Plus 进行开发时，由于自动生成的 ID 过长，重新设置数据库自增长ID的起始值' -->
 
 <!-- # 解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值 -->
-
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。</p>
+<h1 id="解决-MyBatis-Plus-自动生成的过长-ID-问题并重新设置数据库自增长ID的起始值"><a href="#解决-MyBatis-Plus-自动生成的过长-ID-问题并重新设置数据库自增长ID的起始值" class="headerlink" title="解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值"></a>解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。</p>
 <p>在某种情况下，当使用 MyBatis Plus 自动生成的 ID 过长时，可能导致其他接口无法按照 int 类型查询数据，因为数据库中设计为 bigint 类型，纯了 19 位数字。为解决这个问题，一种简单的方法是使用数据库的自增长主键来替代 MyBatis Plus 自动生成的 ID，避免生成过长的 ID。</p>
 <p>另外，当在 MySQL 数据库中使用了自增长类型的 ID，并删除了部分数据后，可能需要重新设置自增长 ID 的起始值。以下是两种重置自增长 ID 的方法的详细步骤。</p>
-<span id="more"></span>
-
 <h2 id="方法1：使用-ALTER-TABLE-命令"><a href="#方法1：使用-ALTER-TABLE-命令" class="headerlink" title="方法1：使用 ALTER TABLE 命令"></a>方法1：使用 ALTER TABLE 命令</h2><p>首先确认要重置自增长 ID 的表名，例如表名为 <code>base_user</code>。</p>
 <ol>
-<li>执行以下 SQL 语句获取表中的最大 ID 值：</li>
+<li>执行以下 SQL 语句获取表中的最大 ID 值：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">MAX</span>(id) <span class="keyword">FROM</span> base_user;</span><br><span class="line">将最大 ID 值加<span class="number">1</span>，并执行以下 <span class="keyword">SQL</span> 语句重置自增长 ID，假设最大 ID 值为 <span class="number">2000</span>：</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> base_user AUTO_INCREMENT <span class="operator">=</span> <span class="number">2001</span>;</span><br><span class="line">这样，以后插入数据时，自增长 ID 将从 <span class="number">2001</span> 开始递增。</span><br></pre></td></tr></table></figure></li>
 </ol>
-<pre><code class="sql">SELECT MAX(id) FROM base_user;
-将最大 ID 值加1，并执行以下 SQL 语句重置自增长 ID，假设最大 ID 值为 2000：
-ALTER TABLE base_user AUTO_INCREMENT = 2001;
-这样，以后插入数据时，自增长 ID 将从 2001 开始递增。
-
-方法2：使用 TRUNCATE TABLE 命令
-首先确认要重置自增长 ID 的表名，例如表名为 base_user。
-
-执行以下 SQL 语句来清空表并重置自增长 ID（注意：该命令会删除表中的所有数据，请确保已备份重要数据）：
-TRUNCATE TABLE base_user;
-TRUNCATE TABLE 命令将删除表中的所有数据，并重新创建表，自动将自增长 ID 重置为 1 开始。
-
-注意：在生产环境中，请谨慎使用重置自增长 ID 的方法，以确保数据的完整性和一致性。
-
-使用数据库自增长主键的解决方案
-为了解决 MyBatis Plus 自动生成的过长 ID 问题，可以使用数据库的自增长主键来替代 MyBatis Plus 自动生成的 ID，从而生成相对较短的 ID。
-
-解决方案步骤
-在实体类的 ID 字段上添加 @TableId(type = IdType.AUTO) 注解，指定使用数据库的自增长主键。示例代码如下：
-
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-
-public class YourEntity &#123;
-    @TableId(type = IdType.AUTO)
-    private Long id;
-
-    // 其他字段
-&#125;
-在数据库中创建相应的表，并将 ID 字段设置为自增长（一般使用 AUTO_INCREMENT 或类似方法实现）。示例 SQL 代码如下：
-CREATE TABLE your_table (
-    id bigint AUTO_INCREMENT PRIMARY KEY,
-    -- 其他字段
-);
-这样，MyBatis Plus 将使用数据库自增长主键来生成 ID，避免了生成过长的 ID。
-
-请注意，这种简化的解决方案依赖于数据库的自增长主键功能，所以请确保数据库表的设置是支持自增长主键的。
-
-总结
-通过使用数据库的自增长主键来替代 MyBatis Plus 自动生成的过长 ID，可以提高数据库性能和索引效率。这是一个简单而有效的解决方案。
-
-希望这个文档对你有帮助！
-</code></pre>
+<p>方法2：使用 TRUNCATE TABLE 命令<br>首先确认要重置自增长 ID 的表名，例如表名为 base_user。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">执行以下 <span class="keyword">SQL</span> 语句来清空表并重置自增长 ID（注意：该命令会删除表中的所有数据，请确保已备份重要数据）：</span><br><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> base_user;</span><br><span class="line"><span class="keyword">TRUNCATE</span> <span class="keyword">TABLE</span> 命令将删除表中的所有数据，并重新创建表，自动将自增长 ID 重置为 <span class="number">1</span> 开始。</span><br></pre></td></tr></table></figure>
+<p>注意：在生产环境中，请谨慎使用重置自增长 ID 的方法，以确保数据的完整性和一致性。</p>
+<p>使用数据库自增长主键的解决方案<br>为了解决 MyBatis Plus 自动生成的过长 ID 问题，可以使用数据库的自增长主键来替代 MyBatis Plus 自动生成的 ID，从而生成相对较短的 ID。</p>
+<p>解决方案步骤<br>在实体类的 ID 字段上添加 @TableId(type &#x3D; IdType.AUTO) 注解，指定使用数据库的自增长主键。示例代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.IdType;</span><br><span class="line"><span class="keyword">import</span> com.baomidou.mybatisplus.annotation.TableId;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">YourEntity</span> &#123;</span><br><span class="line">    <span class="meta">@TableId(type = IdType.AUTO)</span></span><br><span class="line">    <span class="keyword">private</span> Long id;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 其他字段</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在数据库中创建相应的表，并将 ID 字段设置为自增长（一般使用 AUTO_INCREMENT 或类似方法实现）。示例 SQL 代码如下：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> your_table (</span><br><span class="line">    id <span class="type">bigint</span> AUTO_INCREMENT <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">    <span class="comment">-- 其他字段</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>这样，MyBatis Plus 将使用数据库自增长主键来生成 ID，避免了生成过长的 ID。</p>
+<p>请注意，这种简化的解决方案依赖于数据库的自增长主键功能，所以请确保数据库表的设置是支持自增长主键的。</p>
+<p>总结<br>通过使用数据库的自增长主键来替代 MyBatis Plus 自动生成的过长 ID，可以提高数据库性能和索引效率。这是一个简单而有效的解决方案。</p>
+<p>希望这个文档对你有帮助！</p>
 
       
 
@@ -545,7 +511,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">落魄Java在线炒粉&lt;br&gt;&lt;br&gt;小份十元&lt;br&gt;大份十五</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">落魄Java在线炒粉 &lt;br/&gt; &lt;br &gt;小份十元 &lt;br/&gt;大份十五 &lt;br/&gt; QQ:2216109163</div>
   	  	
     	</section>
     
