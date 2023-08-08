@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="https://ueatpeach.github.io">
   <title>在使用 MyBatis Plus 进行开发时，由于自动生成的 ID 过长，重新设置数据库自增长ID的起始值 | 星星之火</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值问题描述在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。 在某种情况下，当使用 MyBatis Plus 自动生成的 ID 过长时，可能导致其他接口无法按照 int 类型查询数据，因为数据库中设计为 bigint 类型">
+  <meta name="description" content="解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值问题描述在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在使用 MyBatis Plus 进行开发时，由于自动生成的 ID 过长，重新设置数据库自增长ID的起始值">
 <meta property="og:url" content="https://ueatpeach.github.io/2023/08/04/MyBatis-Plus-bug-first/index.html">
 <meta property="og:site_name" content="星星之火">
-<meta property="og:description" content="解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值问题描述在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。 在某种情况下，当使用 MyBatis Plus 自动生成的 ID 过长时，可能导致其他接口无法按照 int 类型查询数据，因为数据库中设计为 bigint 类型">
+<meta property="og:description" content="解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值问题描述在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-04T07:57:39.000Z">
-<meta property="article:modified_time" content="2023-08-04T09:40:46.777Z">
+<meta property="article:modified_time" content="2023-08-08T05:55:55.952Z">
 <meta property="article:author" content="Wen Kang Jian">
-<meta property="article:tag" content="随笔">
+<meta property="article:tag" content="MyBatis-Plus">
+<meta property="article:tag" content="MySql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="星星之火" type="application/atom+xml">
@@ -44,15 +45,22 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: #00000"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="/" class="profilepic">
+		<!-- <a href="/" class="profilepic">
 			<img src="https://avatars.githubusercontent.com/u/101534718?v=4" class="js-avatar">
-		</a>
+		</a> -->
+		
+			<div id="ds-reset" class="ds-post-self">
+			<div class="ds-avatar" >
+			<img src="https://avatars.githubusercontent.com/u/101534718?v=4">
+			
 		<hgroup>
 		  <h1 class="header-author"><a href="/"></a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">未来可期 你我皆是牛马</p>
 		
 
 		<nav class="header-menu">
@@ -60,9 +68,17 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/tags/tech">技术</a></li>
+	        
+				<li><a href="/tags/something">随笔</a></li>
+	        
+				<li><a href="/photos">相册</a></li>
 	        
 			</ul>
+		</nav>
+		<!-- 总文章数 -->
+		<nav>
+			总文章数 4
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -103,7 +119,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: #00000"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -116,7 +132,13 @@
 			  <h1 class="header-author js-header-author"></h1>
 			</hgroup>
 			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>未来可期 你我皆是牛马<i class="icon icon-quo-right"></i></p>
 			
+			
+			
+				
+			
+				
 			
 				
 			
@@ -143,12 +165,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/tech">技术</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/something">随笔</a></li>
+		        
+					<li style="width: 25%"><a href="/photos">相册</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,6 +205,11 @@
   	<time datetime="2023-08-04T07:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2023-08-04</time>
 </a>
         
+        
+          <span class="archive-article-date">
+              阅读量：<span id="busuanzi_value_page_pv">
+          </span>
+        
       </header>
     
     <div class="article-entry" itemprop="articleBody">
@@ -187,6 +218,8 @@
 
 <!-- # 解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值 -->
 <h1 id="解决-MyBatis-Plus-自动生成的过长-ID-问题并重新设置数据库自增长ID的起始值"><a href="#解决-MyBatis-Plus-自动生成的过长-ID-问题并重新设置数据库自增长ID的起始值" class="headerlink" title="解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值"></a>解决 MyBatis Plus 自动生成的过长 ID 问题并重新设置数据库自增长ID的起始值</h1><h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在使用 MyBatis Plus 进行开发时，自动生成的 ID 过长可能导致数据库性能下降、索引冗长等问题。因此，需要解决这个问题。</p>
+<span id="more"></span>
+
 <p>在某种情况下，当使用 MyBatis Plus 自动生成的 ID 过长时，可能导致其他接口无法按照 int 类型查询数据，因为数据库中设计为 bigint 类型，纯了 19 位数字。为解决这个问题，一种简单的方法是使用数据库的自增长主键来替代 MyBatis Plus 自动生成的 ID，避免生成过长的 ID。</p>
 <p>另外，当在 MySQL 数据库中使用了自增长类型的 ID，并删除了部分数据后，可能需要重新设置自增长 ID 的起始值。以下是两种重置自增长 ID 的方法的详细步骤。</p>
 <h2 id="方法1：使用-ALTER-TABLE-命令"><a href="#方法1：使用-ALTER-TABLE-命令" class="headerlink" title="方法1：使用 ALTER TABLE 命令"></a>方法1：使用 ALTER TABLE 命令</h2><p>首先确认要重置自增长 ID 的表名，例如表名为 <code>base_user</code>。</p>
@@ -218,7 +251,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢大佬<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     <div class="reward-box-item">
@@ -244,6 +277,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MyBatis-Plus</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -308,6 +356,15 @@
   
 <nav id="article-nav">
   
+    <a href="/2023/08/08/mybatis-xml-escape/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          MyBatis Mapper XML中比较操作符转义问题
+        
+      </div>
+    </a>
+  
   
     <a href="/2023/07/17/my-first-blog/" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">如何学习Java</div>
@@ -344,6 +401,27 @@
   
 
   
+  <!-- 评论添加 -->
+  
+    <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script type="text/javascript">
+  if(true){
+    var gitalk = new Gitalk({
+      clientID: 'b70a857a2fc21b76b4b0',
+      clientSecret: 'c867b7eb4f1a14501a8efdd5ea29f79621845584',
+      repo: 'BlogGitalk',
+      owner: 'uEatpeach',
+      admin: ['uEatpeach'],
+      id: 'Fri Aug 04 2023 15:57:39 GMT+0800',
+      distractionFreeMode: 'true'
+    })
+    gitalk.render('gitalk-container')
+  }
+</script>
+  
 
 
           </div>
@@ -360,6 +438,17 @@
       	</div>
     </div>
   </div>
+  
+	<!-- 不蒜子统计 -->
+	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	<span id="busuanzi_container_site_pv" style='display:none'>
+		  本站总访问量<span id="busuanzi_value_site_pv"></span>次
+	</span>
+	<span class="post-meta-divider">|</span>
+	<span id="busuanzi_container_site_uv" style='display:none'>
+		  本站总访客数<span id="busuanzi_value_site_uv"></span>人次
+	</span>
+
 </footer>
     </div>
     <script>
@@ -370,11 +459,11 @@
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
-		open_in_new: false,
+		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
 		innerArchive: true,
-		showTags: false
+		showTags: true
 	}
 </script>
 
@@ -434,6 +523,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis-Plus</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">XML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Java学习</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -511,7 +620,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">落魄Java在线炒粉 &lt;br/&gt; &lt;br &gt;小份十元 &lt;br/&gt;大份十五 &lt;br/&gt; QQ:2216109163</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">落魄Java在线炒粉 &lt;br/&gt; &lt;br/&gt;小份十元 &lt;br/&gt;大份十五 &lt;br/&gt;联系QQ:&lt;br/&gt;    2216109163</div>
   	  	
     	</section>
     
