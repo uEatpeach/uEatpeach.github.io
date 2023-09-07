@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Windows &quot;Win+R&quot;命令行运行常用命令</title>
+      <link href="/2023/09/07/Win-RCommandLineRunningCommonCommands/"/>
+      <url>/2023/09/07/Win-RCommandLineRunningCommonCommands/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Windows-“Win-R”命令行运行常用命令"><a href="#Windows-“Win-R”命令行运行常用命令" class="headerlink" title="Windows “Win+R”命令行运行常用命令"></a>Windows “Win+R”命令行运行常用命令</h1><p>Windows操作系统提供了许多方便的方式来执行各种任务，其中之一是使用”Win+R”运行命令行。这个快捷键组合可以让您迅速启动各种应用程序、工具和系统实用程序，而无需通过开始菜单或桌面快捷方式查找它们。在本文中，我们将介绍一些常用的”Win+R”运行命令，以提高您的Windows使用效率。</p><span id="more"></span><h2 id="1-打开应用程序"><a href="#1-打开应用程序" class="headerlink" title="1. 打开应用程序"></a>1. 打开应用程序</h2><ul><li><strong>mspaint</strong>: 打开微软绘图。</li><li><strong>calc</strong>: 打开计算器。</li><li><strong>notepad</strong>: 启动记事本。</li><li><strong>wordpad</strong>: 打开WordPad。</li><li><strong>msconfig</strong>: 打开系统配置实用程序，用于管理启动项和服务。</li></ul><h2 id="2-文件和文件夹操作"><a href="#2-文件和文件夹操作" class="headerlink" title="2. 文件和文件夹操作"></a>2. 文件和文件夹操作</h2><ul><li><strong>explorer</strong>: 打开文件资源管理器，浏览您的计算机文件和文件夹。</li><li><strong>cmd</strong> 或 <strong>powershell</strong>: 启动命令提示符或PowerShell窗口。</li><li><strong>control folders</strong>: 打开文件夹选项，允许您自定义文件夹的外观和行为。</li><li><strong>control printers</strong>: 打开打印机和扫描仪设置。</li></ul><h2 id="3-系统工具"><a href="#3-系统工具" class="headerlink" title="3. 系统工具"></a>3. 系统工具</h2><ul><li><strong>devmgmt.msc</strong>: 打开设备管理器，用于管理计算机的硬件设备。</li><li><strong>diskmgmt.msc</strong>: 打开磁盘管理，允许您管理硬盘分区和驱动器。</li><li><strong>services.msc</strong>: 打开服务管理器，用于管理Windows服务。</li><li><strong>taskmgr</strong>: 打开任务管理器，查看和管理运行中的进程和性能。</li></ul><h2 id="4-网络和互联网"><a href="#4-网络和互联网" class="headerlink" title="4. 网络和互联网"></a>4. 网络和互联网</h2><ul><li><strong>ncpa.cpl</strong>: 打开网络连接，管理网络适配器和连接。</li><li><strong>inetcpl.cpl</strong>: 打开Internet属性，允许您自定义Internet Explorer和Internet选项设置。</li><li><strong>ping [网址或IP地址]</strong>: 使用Ping命令测试与特定网站或IP地址的连接。</li></ul><h2 id="5-快速访问"><a href="#5-快速访问" class="headerlink" title="5. 快速访问"></a>5. 快速访问</h2><ul><li><strong>lusrmgr.msc</strong>: 打开本机用户和组管理。</li><li><strong>oobe&#x2F;msoobe &#x2F;a</strong>: 检查XP是否激活。</li><li><strong>cleanmgr</strong>: 垃圾整理。</li><li><strong>net start messenger</strong>: 开始信使服务。</li><li><strong>compmgmt.msc</strong>: 打开计算机管理。</li></ul><h2 id="6-系统维护"><a href="#6-系统维护" class="headerlink" title="6. 系统维护"></a>6. 系统维护</h2><ul><li><strong>rononce -p</strong>: 15秒关机。</li><li><strong>dxdiag</strong>: 检查DirectX信息。</li><li><strong>Msconfig.exe</strong>: 系统配置实用程序。</li><li><strong>mem.exe</strong>: 显示内存使用情况。</li><li><strong>regedit.exe</strong>: 注册表编辑器。</li><li><strong>winchat</strong>: XP自带局域网聊天。</li><li><strong>progman</strong>: 程序管理器。</li><li><strong>winmsd</strong>: 系统信息。</li><li><strong>perfmon.msc</strong>: 计算机性能监测程序。</li><li><strong>winver</strong>: 检查Windows版本。</li><li><strong>sfc &#x2F;scannow</strong>: 扫描错误并复原。</li></ul><h2 id="7-其他实用程序"><a href="#7-其他实用程序" class="headerlink" title="7. 其他实用程序"></a>7. 其他实用程序</h2><ul><li><strong>wmimgmt.msc</strong>: 打开Windows管理体系结构(WMI)。</li><li><strong>wupdmgr</strong>: Windows更新程序。</li><li><strong>wscript</strong>: Windows脚本宿主设置。</li><li><strong>write</strong>: 写字板。</li><li><strong>wiaacmgr</strong>: 扫描仪和照相机向导。</li></ul><p>这些是一些常见的”Win+R”运行命令，可以帮助您更快捷地访问Windows的各种功能和工具，提高了工作效率和操作便捷性。</p><p>请注意，使用这些命令时要小心，确保您知道它们的用途，以免不小心做出可能导致系统问题的更改。</p><p>希望这篇文章能够帮助您更好地利用Windows操作系统。</p><p>如果您有其他常用的”Win+R”命令或想要了解更多相关信息，请在评论中分享您的想法！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>MyBatis Mapper XML中比较操作符转义问题</title>
       <link href="/2023/08/08/mybatis-xml-escape/"/>
       <url>/2023/08/08/mybatis-xml-escape/</url>
