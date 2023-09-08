@@ -152,6 +152,7 @@
         flex-basis: 100% !important;
     }
 }
+
 /* 自定义底部  End */
 
 
@@ -234,10 +235,10 @@
 /* 彩带 */
 .card-info-avatar:hover {
     background: url(https://cdn.jsdelivr.net/gh/rigodlee/BLOGCDN/img/H3342af90d24b4d62b9bbfec9688ccc25M.gif);
-  }
-  
-  /* 花 */
-  /* .card-info-avatar:hover {
+}
+
+/* 花 */
+/* .card-info-avatar:hover {
     background: url(https://cdn.jsdelivr.net/gh/rigodlee/BLOGCDN/img/20200530181856.gif);
   } */
 
@@ -276,31 +277,128 @@
 }
 
 @media screen and (max-width: 768px) {
-    .tk-comment .vemoji[alt|=menhera], .tk-comment .tk-owo-emotion[alt*=menhera] {
+
+    .tk-comment .vemoji[alt|=menhera],
+    .tk-comment .tk-owo-emotion[alt*=menhera] {
         max-width: calc(100% - 30px) !important;
         max-height: calc(100% - 30px) !important;
     }
+
     .OwO .OwO-body .OwO-items-image .OwO-item[title*=menhera] {
         max-width: calc(50% - 10px);
         box-sizing: border-box;
     }
-    
+
 }
+
 /* Twikoo 评论样式 */
 
 /* 自定义字体 */
-@font-face {
+/* @font-face { */
     /* 为载入的字体取名字(随意) */
-    font-family: 'YSHST';	
+    /* font-family: 'YSHST'; */
     /* 字体文件地址(相对或者绝对路径都可以) */
-    src: url(/font/优设好身体.woff2);
+    /* src: url(/font/优设好身体.woff2); */
     /* 定义加粗样式(加粗多少) */
-    font-weight: normal;
+    /* font-weight: normal; */
     /* 定义字体样式(斜体/非斜体) */
-    font-style: normal;
+    /* font-style: normal; */
     /* 定义显示样式 */
-    font-display: block;
-  }
+    /* font-display: block; */
+/* } */
+
+
+@font-face {
+    font-family: 'tzy';
+    /* 字体名自定义即可 */
+    /* src: url('https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/font/ZhuZiAWan.woff2'); */
+    src: url('https://npm.elemecdn.com/ethan4116-blog/lib/font/ZhuZiAWan.ttf');
+    /* 字体文件路径 */
+    font-display: swap;
+}
+
+body,
+.gitcalendar {
+    font-family: tzy !important;
+}
 
 
 /* 自定义字体 */
+
+
+/* 局部css优化 */
+.categoryBar-list {
+    max-height: 400px;
+}
+
+.clock-row {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*3s为加载动画的时间，1为加载动画的次数，ease-in-out为动画效果*/
+
+#page-header,
+#web_bg {
+    -webkit-animation: imgblur 2s 1 ease-in-out;
+    animation: imgblur 2s 1 ease-in-out;
+}
+
+@keyframes imgblur {
+    0% {
+        filter: blur(5px);
+    }
+    100% {
+        filter: blur(0px);
+    }
+}
+
+/*适配使用-webkit内核的浏览器 */
+
+@-webkit-keyframes imgblur {
+    0% {
+        -webkit-filter: blur(5px);
+    }
+    100% {
+        -webkit-filter: blur(0px);
+    }
+}
+.table-wrap img {
+    margin: .6rem auto .1rem !important;
+}
+
+/* 标签外挂 网站卡片 start */
+
+.site-card-group img {
+    margin: 0 auto .1rem !important;
+}
+
+.site-card-group .info a img {
+    margin-right: 10px !important;
+}
+
+[data-theme='dark'] .site-card-group .site-card .info .title {
+    color: #f0f0f0 !important;
+}
+
+[data-theme='dark'] .site-card-group .site-card .info .desc {
+    color: rgba(255, 255, 255, .7) !important;
+}
+
+.site-card-group .info .desc {
+    margin-top: 4px !important;
+}
+/* 代码块颜色 */
+
+figure.highlight pre .addition {
+    color: #00bf03 !important;
+}
+
+/* 局部css优化 */
+
+/* 一款基于Butterfly主题的loading动画 */
+.loading-img {
+    background: url(https://cdn.staticaly.com/gh/HappyLeeCode/IMG@main/img/avatar.webp) no-repeat center center;
+    background-size: cover;
+  }
+/* 一款基于Butterfly主题的loading动画 */
