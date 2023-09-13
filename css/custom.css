@@ -404,20 +404,7 @@ figure.highlight pre .addition {
 /* 一款基于Butterfly主题的loading动画 */
 
 /* qq群 */
-.qq-group-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50; /* 按钮背景颜色 */
-    color: white; /* 文本颜色 */
-    text-decoration: none;
-    border: none;
-    border-radius: 5px; /* 圆角边框 */
-    cursor: pointer;
-  }
-  
-  .qq-group-button:hover {
-    background-color: #45a049; /* 鼠标悬停时的背景颜色 */
-  }
+
 
 #qq-btn {
     text-align: center;
