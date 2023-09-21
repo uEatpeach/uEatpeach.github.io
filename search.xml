@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>基于 Hexo 从零开始搭建个人博客（二）</title>
+      <link href="/2023/09/21/hexoBuild02/"/>
+      <url>/2023/09/21/hexoBuild02/</url>
+      
+        <content type="html"><![CDATA[<div class="note info no-icon flat"><p>阅读本篇前，请先配置好相应的环境，请仔细阅读教程 <span class='p blue'><a href="https://wenkj.xyz/2023/09/20/hexoBuild01/">基于 Hexo 从零开始搭建个人博客（一）</a></span>。</p></div><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><div class="note info no-icon flat"><p>本站基于Hexo搭建，用的是 最新的🦋 hexo-theme-butterfly 主题 v4.10.0-b1，如果你是 v4.10.0-b1 之外的版本，可能有些地方会有出入，请留意。</p></div><h2 id="初始化-Hexo-项目"><a href="#初始化-Hexo-项目" class="headerlink" title="初始化 Hexo 项目"></a>初始化 Hexo 项目</h2><ol><li>在目标路径（我这里选的路径为【E:\wkj\demo】）打开cmd命令窗口<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_015.png"/></div></div></li><li><p>执行hexo init初始化项目(warning不用担心)。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog-demo(你的项目名)</span><br></pre></td></tr></table></figure><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_016.png"/></div></div></li><li><p>进入blog-demo ，输入npm i安装相关依赖</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> blog-demo  //进入blog-demo文件夹</span><br><span class="line">npm i</span><br></pre></td></tr></table></figure><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_017.png"/></div></div></li><li>初始化项目后，blog-demo有如下结构：<br>【node_modules】：依赖包<br>【scaffolds】：生成文章的一些模板<br>【source】：用来存放你的文章<br>【themes】：主题<br>【.npmignore】：发布时忽略的文件（可忽略）<br>【_config.landscape.yml】：主题的配置文件<br>【_config.yml】：博客的配置文件<br>【package.json】：项目名称、描述、版本、运行和开发等信息<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_018.png"/></div></div></li><li>输入hexo server或者hexo s。<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_019.png"/></div></div></li><li>打开浏览器，输入地址：<a href="http://localhost:4000/">http://localhost:4000/</a> ，看到下面的效果，说明你的博客已经构建成功了。（ctrl+c结束运行）<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_020.png"/></div></div></li></ol><h2 id="将静态博客挂载到-GitHub-Pages"><a href="#将静态博客挂载到-GitHub-Pages" class="headerlink" title="将静态博客挂载到 GitHub Pages"></a>将静态博客挂载到 GitHub Pages</h2><p>上一篇文章中，我们已经完成了对 GitHub 账户的注册以及 Github Pages 的创建，并且为 GitHub 配置了 SSH key, 我们将博客部署到 GitHub Pages 上即可。<br>安装 hexo-deployer-git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure><br>修改 _config.yml 文件<br>在blog-demo目录下的_config.yml，就是整个Hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考官方的配置描述。</p><p>修改最后一行的配置，将repository修改为你自己的github项目地址即可。</p><div class="note info no-icon flat"><p>请检查自己的默认分支是不是master。(我用的就是master)</p></div><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:uEatpeach/uEatpeach.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure><p>部署项目到 GitHub<br>修改好配置后，运行如下命令，将代码部署到 GitHub。</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure><ul><li>hexo clean：删除之前生成的文件，若未生成过静态文件，可忽略此命令。</li><li>hexo generate：生成静态文章，可以用hexo g缩写</li><li>hexo deploy：部署文章，可以用hexo d缩写<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_021.png"/></div></div></li></ul><div class="note info no-icon flat"><p>注意：deploy时可能要你输入 username 和 password。</p></div><p>如果出现Deploy done，则说明部署成功了。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_022.png"/></div></div></p><p>打开浏览器访问：<a href="https://ueatpeach.github.io/">https://ueatpeach.github.io/</a> ，这时候我们就可以看到博客内容了。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_023.png"/></div></div></p><h2 id="设置个人域名"><a href="#设置个人域名" class="headerlink" title="设置个人域名"></a>设置个人域名</h2><p>现在你的个人网站的地址是 yourname.github.io。如果觉得不够定制化，可以购买一个专属域名。</p><div class="note info no-icon flat"><p>这一步不是必要的，如果目前还不想买域名可以先跳过。</p></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于 Hexo 从零开始搭建个人博客（一）</title>
       <link href="/2023/09/20/hexoBuild01/"/>
       <url>/2023/09/20/hexoBuild01/</url>
