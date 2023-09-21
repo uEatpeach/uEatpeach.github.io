@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>基于 Hexo 从零开始搭建个人博客（一）</title>
+      <link href="/2023/09/20/hexoBuild01/"/>
+      <url>/2023/09/20/hexoBuild01/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><div class="note info no-icon flat"><p>本站基于Hexo搭建，用的是 最新的🦋 hexo-theme-butterfly 主题 v4.10.0-b1，如果你是 v4.10.0-b1 之外的版本，可能有些地方会有出入，请留意。</p></div><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><div class="note info no-icon flat"><p>本教程主要面向 Windows 用户 </p></div><ul><li>操作系统：Windows10 || Windows11 </li><li>Node</li><li>Git</li><li>Hexo</li><li>idea（推荐使用 Visual Studio Code）</li><li>一个 GitHub 帐号</li><li>一个云服务器（可选）</li><li>一个域名（可选）</li></ul><h2 id="安装-Node"><a href="#安装-Node" class="headerlink" title="安装 Node"></a>安装 Node</h2><div class="tabs" id="nodebuild"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="nodebuild-1">方法一</button><button type="button" class="tab " data-href="nodebuild-2">方法二</button><button type="button" class="tab " data-href="nodebuild-3">方法三</button></ul><div class="tab-contents"><div class="tab-item-content active" id="nodebuild-1"><p><strong>对于前端工程师，或正打算学习前端相关知识，建议用<span class='p blue'>nvm</span>来管理<span class='p blue'>Node</span>版本</strong></p></div><div class="tab-item-content" id="nodebuild-2"><p><strong>暂时没写，网上教程较多，建议您百度一下</strong></p></div><div class="tab-item-content" id="nodebuild-3"><p><strong>暂时没写，网上教程较多，建议您百度一下</strong></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div><h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><p>在目标路径打开CMD窗口，输入<span class='p blue'>npm install -g hexo-cli</span>安装<span class='p blue'>Hexo</span>环境。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure><br>安装完后输入<span class='p blue'>hexo -v</span>验证是否安装成功。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_001.png"/></div></div></p><h2 id="注册-GitHub-帐号"><a href="#注册-GitHub-帐号" class="headerlink" title="注册 GitHub 帐号"></a>注册 GitHub 帐号</h2><ol><li>进入官网 <span class='p blue'>https://github.com/</span></li><li>点击右上角的 Sign up(注册)，不是Sign in（登录）。<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_002.png"/></div></div></li><li>填写自己的邮箱、密码、用户名等信息，然后用邮箱验证即可完成。<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_003.png"/></div></div><h2 id="创建-GitHub-仓库"><a href="#创建-GitHub-仓库" class="headerlink" title="创建 GitHub 仓库"></a>创建 GitHub 仓库</h2>点击右上角的<span class='p blue'>+</span>按钮，选择<span class='p blue'>New repository</span>，创建一个<span class='p blue'><用户名>.github.io</span>的仓库。（请一定用自己的用户名）<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_004.png"/></div></div>找不到创建入口的，访问：<a href="https://github.com/new">https://github.com/new</a><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_005.png"/></div></div></li></ol><ul><li>仓库的格式必须为：&lt;用户名&gt;.github.io</li><li>Description：为描述仓库（选填）</li><li>勾选 Initialize this repository with a README 初始化一个 README.md 文件</li><li>点击 Creat repository 进行创建</li></ul><h2 id="Git安装-amp-amp-连接Github"><a href="#Git安装-amp-amp-连接Github" class="headerlink" title="Git安装 &amp;&amp; 连接Github"></a>Git安装 &amp;&amp; 连接Github</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><ol><li>进入官网：<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> ，由于官网下载太慢可以通过淘宝的开源镜像下载 网址：<a href="https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.36.1.windows.1/">https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.36.1.windows.1/</a> ，下载版本更具自己的需求选择即可。</li></ol><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_006.png"/></div></div><ol><li>下载后傻瓜式安装Git即可，安装的目录可以使用默认目录【C:/Program Files/Git】，也可以自定义路径。</li><li>点击电脑左下角开始即可看见Git Bash。<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_007.png"/></div></div></li></ol><ul><li>Git CMD 是windows 命令行的指令风格</li><li>Git Bash 是linux系统的指令风格（建议使用）</li><li>Git GUI是图形化界面（新手学习不建议使用</li></ul><ol><li>打开Git Bash后如下图所示即代表安装完成。<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_008.png"/></div></div></li></ol><h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><ol><li>常用命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config -l  //查看所有配置</span><br><span class="line"></span><br><span class="line">git config --system --list //查看系统配置</span><br><span class="line"></span><br><span class="line">git config --global --list //查看用户（全局）配置</span><br></pre></td></tr></table></figure></li><li>配置用户名和邮箱<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name <span class="string">&quot;你的用户名&quot;</span></span><br><span class="line"></span><br><span class="line">git config --global user.email <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure>输入后没有报错即代表设置成功。</li></ol><p>通过git config -l 检查是否配置成功，至此git安装及配置全部完成。<br><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_009.png"/></div></div></p><h3 id="连接Github"><a href="#连接Github" class="headerlink" title="连接Github"></a>连接Github</h3><ol><li>生成ssh公钥，执行以下命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure>之后打开C盘下用户文件夹下的<span class='p blue'>.ssh</span> 的文件夹，会看到 id_rsa.pub<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_010.png"/></div></div></li></ol><p>用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。</p><ol><li>将 SSH KEY 配置到 GitHub<br>进入github，点击右上角头像 选择<span class='p blue'>settings</span><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_011.png"/></div></div>进入设置页后选择<span class='p blue'>SSH and GPG keys</span> <div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_012.png"/></div></div><div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_013.png"/></div></div></li></ol><div class="note info no-icon flat"><p>注意: 要是有【Key type】的选择项 ，选择默认<span class='p blue'>Authentication Key</span> 即可。</p></div><ol><li>测试连接，输入以下命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>出现如下信息，说明已经大功告成！<div class="img-wrap"><div class="img-bg"><img class="img" src="https://cdn.jsdelivr.net/gh/uEatpeach/Bolg-img/hexoBuild/img/hexoBuild_014.png"/></div></div>以上就是所有步骤，恭喜你已经完成了环境准备工作~</li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>基于 Hexo 从零开始搭建个人博客系列</title>
+      <link href="/2023/09/20/hexoBuild/"/>
+      <url>/2023/09/20/hexoBuild/</url>
+      
+        <content type="html"><![CDATA[<div class="timeline blue"><div class='timeline-item headline'><div class='timeline-item-title'><div class='item-circle'><p>基于 Hexo 从零开始搭建个人博客系列文章：</p></div></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023-09-20 <a href="https://wenkj.xyz/hexoBuild01">基于 Hexo 从零开始搭建个人博客（一）: 环境准备</a></p></div></div><div class='timeline-item-content'></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023-09-20 <a href="https://wenkj.xyz/hexoBuild02">基于 Hexo 从零开始搭建个人博客（二）: 项目初识</a></p></div></div><div class='timeline-item-content'></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023-09-20 <a href="https://wenkj.xyz/hexoBuild03">基于 Hexo 从零开始搭建个人博客（三）: 主题安装</a></p></div></div><div class='timeline-item-content'></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023-09-20 <a href="https://wenkj.xyz/hexoBuild04">基于 Hexo 从零开始搭建个人博客（四）: 基础配置</a></p></div></div><div class='timeline-item-content'></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023-09-20 <a href="https://wenkj.xyz/hexoBuild05">基于 Hexo 从零开始搭建个人博客（五）: 详细配置</a></p></div></div><div class='timeline-item-content'></div></div><div class='timeline-item'><div class='timeline-item-title'><div class='item-circle'><p>2023-09-20 <a href="https://wenkj.xyz/hexoBuild06">基于 Hexo 从零开始搭建个人博客（六）: 主题美化</a></p></div></div><div class='timeline-item-content'></div></div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Windows &quot;Win+R&quot;命令行运行常用命令</title>
       <link href="/2023/09/07/Win-RCommandLineRunningCommonCommands/"/>
       <url>/2023/09/07/Win-RCommandLineRunningCommonCommands/</url>
@@ -128,13 +178,13 @@
             
             <tag> MySql </tag>
             
+            <tag> Windows </tag>
+            
             <tag> Java学习 </tag>
             
             <tag> MyBatis </tag>
             
             <tag> XML </tag>
-            
-            <tag> Windows </tag>
             
         </tags>
       
