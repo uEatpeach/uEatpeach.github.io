@@ -4,7 +4,7 @@
 
     <url>
         <loc>https://wenkj.xyz/tags/hexo/</loc>
-        <lastmod>2023-09-22T09:12:33.657Z</lastmod>
+        <lastmod>2023-09-22T09:15:47.824Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
@@ -31,6 +31,13 @@
     </url>
 
     <url>
+        <loc>https://wenkj.xyz/tags/Windows/</loc>
+        <lastmod>2023-09-18T05:32:13.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://wenkj.xyz/tags/MySql/</loc>
         <lastmod>2023-09-18T05:32:13.225Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -39,13 +46,6 @@
 
     <url>
         <loc>https://wenkj.xyz/tags/MyBatis-Plus/</loc>
-        <lastmod>2023-09-18T05:32:13.225Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://wenkj.xyz/tags/Windows/</loc>
         <lastmod>2023-09-18T05:32:13.225Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
