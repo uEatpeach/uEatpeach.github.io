@@ -24,13 +24,6 @@
     </url>
 
     <url>
-        <loc>https://wenkj.xyz/tags/Windows/</loc>
-        <lastmod>2023-09-18T05:32:13.225Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://wenkj.xyz/tags/XML/</loc>
         <lastmod>2023-09-18T05:32:13.225Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -46,6 +39,13 @@
 
     <url>
         <loc>https://wenkj.xyz/tags/Java%E5%AD%A6%E4%B9%A0/</loc>
+        <lastmod>2023-09-18T05:32:13.225Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://wenkj.xyz/tags/Windows/</loc>
         <lastmod>2023-09-18T05:32:13.225Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
