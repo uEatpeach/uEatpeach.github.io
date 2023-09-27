@@ -13,7 +13,7 @@
       
       <categories>
           
-          <category> Java面试题 </category>
+          <category> 面试题 </category>
           
       </categories>
       
@@ -330,13 +330,13 @@
             
             <tag> MySql </tag>
             
+            <tag> Windows </tag>
+            
             <tag> Java学习 </tag>
             
             <tag> MyBatis </tag>
             
             <tag> XML </tag>
-            
-            <tag> Windows </tag>
             
         </tags>
       
