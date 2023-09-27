@@ -1,0 +1,560 @@
+/* 自定义底部  start */
+#ft {
+    max-width: 1200px;
+    margin: 0 auto 12px;
+    display: flex;
+    color: rgb(255 255 255 / 80%) !important;
+    text-align: left;
+    flex-wrap: wrap;
+}
+
+.ft-item-1,
+.ft-item-2 {
+    display: flex;
+    height: 100%;
+    padding: 10px 14px;
+}
+
+.ft-item-1 {
+    flex-direction: column;
+    flex: 2;
+}
+
+.ft-item-2 {
+    flex: 1;
+    flex-direction: column;
+}
+
+.t-top {
+    display: flex;
+}
+
+.t-top .t-t-l {
+    display: flex;
+    flex-direction: column;
+    flex: 1.4;
+    margin-right: 10px;
+}
+
+.t-top .t-t-l .bg-ad {
+    width: 85%;
+    border-radius: 10px;
+    padding: 0 10px;
+}
+
+.btn-xz-box {
+    margin-top: 10px;
+}
+
+.btn-xz {
+    display: block;
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    text-align: center;
+    line-height: 2.4;
+    margin: 8px 0;
+    cursor: pointer !important;
+}
+
+.btn-xz:hover {
+    text-decoration: none !important;
+
+}
+
+.btn-xz-box:hover .btn-xz {
+    background-color: #6f42c1;
+}
+
+.t-top .t-t-r {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.ft-links {
+    padding: 0 14px;
+    list-style: none;
+    margin-top: 0 !important;
+}
+
+.ft-links li a {
+    display: inline-block !important;
+    width: 50%;
+    cursor: pointer !important;
+}
+
+.ft-links li a:hover {
+    text-decoration: none !important;
+    color: #6f42c1 !important;
+}
+
+.ft-item-2 .ft-img-group {
+    width: 100%;
+}
+
+.ft-t {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.t-l-t {
+    padding-left: 14px;
+}
+
+.ft-item-2 .ft-img-group .img-group-item {
+    display: inline-block;
+    width: 18.4%;
+    margin-right: 14px;
+    margin-bottom: 6px;
+}
+
+.ft-item-2 .ft-img-group .img-group-item a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer !important;
+}
+
+.ft-item-2 .ft-img-group .img-group-item a img {
+    width: 100%;
+    max-height: 80px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .ft-item-1 {
+        flex-basis: 100% !important;
+    }
+
+    .ft-item-2 {
+        flex-basis: 100% !important;
+    }
+
+    .t-top .t-t-l .bg-ad {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .t-top {
+        flex-wrap: wrap;
+    }
+
+    .t-top .t-t-l {
+        flex-basis: 100% !important;
+
+    }
+
+    .t-top .t-t-r {
+        margin-top: 16px;
+        flex-basis: 100% !important;
+    }
+}
+
+/* 自定义底部  End */
+
+
+/* 公众号 Start */
+
+[data-theme='light'] #aside-content .card-widget#card-wechat {
+    background: #49b1f5 !important;
+}
+
+#aside-content .card-widget#card-wechat {
+    background: var(--card-bg);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0;
+    cursor: pointer !important;
+    border: none;
+    height: 110px;
+}
+
+/* 如果你设置了aside 的 mobile 为 false，记得放开下面这段注释；
+   如果你设置了aside 的 mobile 为 true ，不需要改动。 */
+
+/* @media screen and (max-width: 768px) {
+    #aside-content .card-widget#card-wechat {
+        display: none !important;
+    }
+} */
+
+@media screen and (min-width: 1300px) {
+    #aside-content .card-widget {
+        margin-top: 1rem;
+    }
+}
+
+#flip-wrapper {
+    -webkit-perspective: 1000;
+    perspective: 1000;
+    position: relative;
+    width: 235px;
+    height: 110px;
+    z-index: 1;
+}
+
+#flip-wrapper:hover #flip-content {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+#flip-content {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: cubic-bezier(0, 0, 0, 1.29) 0.3s;
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: url(https://img.zhheo.com/i/2022/08/31/630efc6e3e794.png) center center no-repeat;
+    background-size: 100%;
+}
+
+.back.face {
+    display: block;
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    background: url(https://img1.baidu.com/it/u=3724382243,1915163985&fm=253&fmt=auto&app=138&f=JPEG?w=888&h=500) center center no-repeat;
+    background-size: 100%;
+}
+
+/* 公众号 End */
+
+/* 头像背景 */
+/* 彩带 */
+.card-info-avatar:hover {
+    background: url(https://cdn.jsdelivr.net/gh/rigodlee/BLOGCDN/img/H3342af90d24b4d62b9bbfec9688ccc25M.gif);
+}
+
+/* 花 */
+/* .card-info-avatar:hover {
+    background: url(https://cdn.jsdelivr.net/gh/rigodlee/BLOGCDN/img/20200530181856.gif);
+  } */
+
+/* 头像背景 */
+
+/* Twikoo 评论样式 */
+
+.tk-input .el-textarea__inner {
+    min-height: 120px !important;
+}
+
+#twikoo .OwO-body {
+    max-width: 100% !important;
+}
+
+#twikoo .OwO .OwO-body .OwO-items:nth-child(1),
+#twikoo .OwO .OwO-body .OwO-items:nth-child(4) {
+    max-height: 360px !important;
+}
+
+#twikoo .OwO-items li[title|=menhera] img {
+    width: 100% !important;
+    margin: 5px 10px;
+}
+
+.tk-comment .tk-owo-emotion[alt*=menhera] {
+    width: 300px !important;
+}
+
+.tk-comment .vemoji[alt|=menhera],
+.tk-comment .tk-owo-emotion[alt*=menhera] {
+    max-width: 300px !important;
+    max-height: 300px !important;
+    margin: 8px 1px;
+    display: block !important;
+}
+
+@media screen and (max-width: 768px) {
+
+    .tk-comment .vemoji[alt|=menhera],
+    .tk-comment .tk-owo-emotion[alt*=menhera] {
+        max-width: calc(100% - 30px) !important;
+        max-height: calc(100% - 30px) !important;
+    }
+
+    .OwO .OwO-body .OwO-items-image .OwO-item[title*=menhera] {
+        max-width: calc(50% - 10px);
+        box-sizing: border-box;
+    }
+
+}
+
+/* Twikoo 评论样式 */
+
+/* 自定义字体 */
+/* @font-face { */
+    /* 为载入的字体取名字(随意) */
+    /* font-family: 'YSHST'; */
+    /* 字体文件地址(相对或者绝对路径都可以) */
+    /* src: url(/font/优设好身体.woff2); */
+    /* 定义加粗样式(加粗多少) */
+    /* font-weight: normal; */
+    /* 定义字体样式(斜体/非斜体) */
+    /* font-style: normal; */
+    /* 定义显示样式 */
+    /* font-display: block; */
+/* } */
+
+
+@font-face {
+    font-family: 'tzy';
+    /* 字体名自定义即可 */
+    /* src: url('https://cdn.jsdelivr.net/gh/tzy13755126023/BLOG_SOURCE/font/ZhuZiAWan.woff2'); */
+    src: url('https://npm.elemecdn.com/ethan4116-blog/lib/font/ZhuZiAWan.ttf');
+    /* 字体文件路径 */
+    font-display: swap;
+}
+
+body,
+.gitcalendar {
+    font-family: tzy !important;
+}
+
+
+/* 自定义字体 */
+
+
+/* 局部css优化 */
+.categoryBar-list {
+    max-height: 400px;
+}
+
+.clock-row {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/*3s为加载动画的时间，1为加载动画的次数，ease-in-out为动画效果*/
+
+#page-header,
+#web_bg {
+    -webkit-animation: imgblur 2s 1 ease-in-out;
+    animation: imgblur 2s 1 ease-in-out;
+}
+
+@keyframes imgblur {
+    0% {
+        filter: blur(5px);
+    }
+    100% {
+        filter: blur(0px);
+    }
+}
+
+/*适配使用-webkit内核的浏览器 */
+
+@-webkit-keyframes imgblur {
+    0% {
+        -webkit-filter: blur(5px);
+    }
+    100% {
+        -webkit-filter: blur(0px);
+    }
+}
+.table-wrap img {
+    margin: .6rem auto .1rem !important;
+}
+
+/* 标签外挂 网站卡片 start */
+
+.site-card-group img {
+    margin: 0 auto .1rem !important;
+}
+
+.site-card-group .info a img {
+    margin-right: 10px !important;
+}
+
+[data-theme='dark'] .site-card-group .site-card .info .title {
+    color: #f0f0f0 !important;
+}
+
+[data-theme='dark'] .site-card-group .site-card .info .desc {
+    color: rgba(255, 255, 255, .7) !important;
+}
+
+.site-card-group .info .desc {
+    margin-top: 4px !important;
+}
+/* 代码块颜色 */
+
+figure.highlight pre .addition {
+    color: #00bf03 !important;
+}
+
+/* 局部css优化 */
+
+/* 一款基于Butterfly主题的loading动画 */
+.loading-img {
+    background: url(https://cdn.staticaly.com/gh/HappyLeeCode/IMG@main/img/avatar.webp) no-repeat center center;
+    background-size: cover;
+  }
+/* 一款基于Butterfly主题的loading动画 */
+
+/* qq群 */
+
+
+#qq-btn {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#qq-btn #a-qun {
+    display: block;
+    background-color: var(--btn-bg);
+    color: var(--btn-color);
+    text-align: center;
+    line-height: 2.4;
+    margin: 4px 0;
+    border-radius: var(--tzy-bd-rd);
+}
+/* qq群 */
+/*  butterfly文章顶部添加波浪效果 */
+/* 波浪css */
+.main-hero-waves-area {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: -11px;
+    z-index: 5;
+  }
+  .waves-area .waves-svg {
+    width: 100%;
+    height: 5rem;
+  }
+  /* Animation */
+  
+  .parallax > use {
+    animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+    fill: #f7f9febd;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+    fill: #f7f9fe82;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+    fill: #f7f9fe36;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+    fill: #f7f9fe;
+  }
+  /* 黑色模式背景 */
+  [data-theme="dark"] .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+    fill: #18171dc8;
+  }
+  [data-theme="dark"] .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+    fill: #18171d80;
+  }
+  [data-theme="dark"] .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+    fill: #18171d3e;
+  }
+  [data-theme="dark"] .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+    fill: #18171d;
+  }
+  
+  @keyframes move-forever {
+    0% {
+      transform: translate3d(-90px, 0, 0);
+    }
+    100% {
+      transform: translate3d(85px, 0, 0);
+    }
+  }
+  /*Shrinking for mobile*/
+  @media (max-width: 768px) {
+    .waves-area .waves-svg {
+      height: 40px;
+      min-height: 40px;
+    }
+  }
+/* butterfly文章顶部添加波浪效果 */
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: rgba(73, 177, 245, 0.2);
+    border-radius: 2em;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #49b1f5;
+    background-image: -webkit-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.4) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.4) 75%,
+      transparent 75%,
+      transparent
+    );
+    border-radius: 2em;
+  }
+  
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+  
+  ::-moz-selection {
+    color: #fff;
+    background-color: #49b1f5;
+  }
+  /* 滚动条 */
+
+  /* 背景 */
+  
+  /* 文章页背景 */
+.layout_post>#post {
+    /* 以下代表透明度为0.7 可以自行修改*/
+    background: rgba(255,255,255,95%);
+}
+
+/* 所有页面背景 */
+#aside_content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
+    /* 以下代表透明度为0.7 */
+    background: rgba(255,255,255,95%);
+}
+/*侧边卡片的透明度 */
+:root {
+  --card-bg: rgba(255, 255, 255, 95%);
+}
+/* 页脚透明 */
+/* #footer { */
+	/* 以下代表透明度为0.7 */
+	/* background: rgba(255,255,255, .4%); */
+/* } */
+
+  /* 背景 */
